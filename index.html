@@ -327,6 +327,9 @@
         .key-points {
           page-break-inside: avoid;
         }
+        .flex {
+          display: flex;
+        }
       }
     </style>
   </head>
@@ -348,7 +351,9 @@
       <div class="slide title-slide active">
         <h1>🇸🇪 Svenska Nyheter</h1>
         <p class="date">September 2025</p>
-        <p>Presentierad ov <b>Youmna</b></p>
+        <p>
+          Grupp 2: <b> Youmna</b> ,<b> Zeineb</b>, <b>Mahtab </b>& <b>Arezou</b>
+        </p>
       </div>
 
       <!-- Slide 1-a: Högt blodtryck -->
@@ -392,18 +397,38 @@
           </div>
         </div>
       </div>
+
       <!-- Slide 1-b: Högt blodtryck -->
       <div class="slide content-slide">
         <div class="slide-number">1/4</div>
         <h2>🩺 Hälsa: Högt blodtryck är vanligt</h2>
 
-        <div class="key-points">
-          <h4>Kan leda till:</h4>
-          <ul>
-            <li>Hjärtinfarkt</li>
-            <li>Stroke</li>
-            <li>Hjärtsvikt</li>
-          </ul>
+        <div
+          class="news-image"
+          style="width: 100%; display: flex; justify-content: space-between"
+        >
+          <img
+            src="media/heart-vector.jpg"
+            width="200"
+            height="150"
+            alt="Heart vector"
+          />
+          <img
+            src="media/hbp2.jpg"
+            width="200"
+            height="150"
+            alt="Blood pressure"
+          />
+        </div>
+        <div class="flex">
+          <div class="key-points">
+            <h4>Kan leda till:</h4>
+            <ul>
+              <li>Hjärtinfarkt</li>
+              <li>Stroke</li>
+              <li>Hjärtsvikt</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -436,19 +461,17 @@
         <div class="news-item">
           <div class="news-image">
             <img
-              src="media/gym.webp"
+              src="media/Gym-structure-1080x675.png"
               width="200"
               height="150"
               alt="Modern gym interior with equipment"
             />
           </div>
-          <div class="news-content">
-            <h3>Projekt "100% Ren Hårdträning"</h3>
-            <p>
-              <strong>Allt fler gym samarbetar med kommuner och polis</strong>
-              för att stoppa användning av anabola steroider och andra
-              dopingmedel.
-            </p>
+          <div class="news-content" style="margin-top: -20px">
+            <h3>
+              Allt fler gym arbetar för att stoppa dopning genom ett projekt som
+              heter ”100% ren hårdträning”
+            </h3>
           </div>
         </div>
 
@@ -461,13 +484,9 @@
             <span class="stat-number">100</span>
             <span>Nya gym sedan 2020</span>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">40K+</span>
-            <span>Uppskattat antal som dopar sig</span>
-          </div>
         </div>
 
-        <div class="key-points">
+        <!-- <div class="key-points">
           <h4>Viktiga insatser:</h4>
           <ul>
             <li>Personal får utbildning om dopning</li>
@@ -477,6 +496,42 @@
             </li>
             <li>Kommuner har nu ansvar för brottförebyggande arbete</li>
           </ul>
+        </div> -->
+      </div>
+      <!-- Slide 2: Gym mot dopning -->
+      <div class="slide content-slide">
+        <div class="slide-number">2/4</div>
+        <h2>💪 Sport: Gym arbetar mot dopning</h2>
+
+        <div class="news-item">
+          <div
+            class="news-image"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <img
+              src="media/doping.jpg"
+              width="100%"
+              height="400px"
+              alt="Modern gym interior with equipment"
+            />
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="key-points">
+            <ul>
+              <li>
+                Dopning är att man tar droger som gör att man presterar
+                bättre.dopning är förbjudet men det händer ändå att vissa
+                idrottare dopar sig för att ha större chans att vinna en
+                tävling.​
+              </li>
+              <li>
+                En vanlig drog som används vid dopning är anabola steroider.​
+              </li>
+              <li>Den gör att musklerna växer snabbare. ​</li>
+            </ul>
+          </div>
         </div>
       </div>
       <!-- Slide 2: Gym mot dopning -->
@@ -487,199 +542,34 @@
         <div class="news-item">
           <div class="news-image">
             <img
-              src="media/gym.webp"
-              width="200"
-              height="150"
+              src="media/kraftig.jpg"
+              width="400"
+              height="300"
               alt="Modern gym interior with equipment"
             />
           </div>
           <div class="news-content">
-            <h3>Projekt "100% Ren Hårdträning"</h3>
+            <h3>Anabola är inte bra för hälsan​</h3>
             <p>
-              <strong>Allt fler gym samarbetar med kommuner och polis</strong>
-              för att stoppa användning av anabola steroider och andra
-              dopingmedel.
+              <strong>
+                Man kan till exempel bli arg, våldsam, och få skador på hjärta
+                …​
+              </strong>
             </p>
           </div>
         </div>
 
-        <div class="statistics">
-          <div class="stat-box">
-            <span class="stat-number">700</span>
-            <span>Gym totalt i Sverige</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">100</span>
-            <span>Nya gym sedan 2020</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">40K+</span>
-            <span>Uppskattat antal som dopar sig</span>
-          </div>
-        </div>
-
         <div class="key-points">
-          <h4>Viktiga insatser:</h4>
           <ul>
-            <li>Personal får utbildning om dopning</li>
-            <li>Rutiner för att identifiera och stoppa missbruk</li>
             <li>
-              Fokus på hälsosam träning istället för prestationshöjande medel
+              Alla idrottare måste testa sig för att visa att de inte använder
+              förbjudna ämnen.​
             </li>
-            <li>Kommuner har nu ansvar för brottförebyggande arbete</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Slide 2: Gym mot dopning -->
-      <div class="slide content-slide">
-        <div class="slide-number">2/4</div>
-        <h2>💪 Sport: Gym arbetar mot dopning</h2>
-
-        <div class="news-item">
-          <div class="news-image">
-            <img
-              src="media/gym.webp"
-              width="200"
-              height="150"
-              alt="Modern gym interior with equipment"
-            />
-          </div>
-          <div class="news-content">
-            <h3>Projekt "100% Ren Hårdträning"</h3>
-            <p>
-              <strong>Allt fler gym samarbetar med kommuner och polis</strong>
-              för att stoppa användning av anabola steroider och andra
-              dopingmedel.
-            </p>
-          </div>
-        </div>
-
-        <div class="statistics">
-          <div class="stat-box">
-            <span class="stat-number">700</span>
-            <span>Gym totalt i Sverige</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">100</span>
-            <span>Nya gym sedan 2020</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">40K+</span>
-            <span>Uppskattat antal som dopar sig</span>
-          </div>
-        </div>
-
-        <div class="key-points">
-          <h4>Viktiga insatser:</h4>
-          <ul>
-            <li>Personal får utbildning om dopning</li>
-            <li>Rutiner för att identifiera och stoppa missbruk</li>
             <li>
-              Fokus på hälsosam träning istället för prestationshöjande medel
+              Det är därför som projektet 100% hård träning har startats. Nu
+              samarbetar många gym med kommuner och polisen för att stoppa
+              dopning.​
             </li>
-            <li>Kommuner har nu ansvar för brottförebyggande arbete</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Slide 2: Gym mot dopning -->
-      <div class="slide content-slide">
-        <div class="slide-number">2/4</div>
-        <h2>💪 Sport: Gym arbetar mot dopning</h2>
-
-        <div class="news-item">
-          <div class="news-image">
-            <img
-              src="media/gym.webp"
-              width="200"
-              height="150"
-              alt="Modern gym interior with equipment"
-            />
-          </div>
-          <div class="news-content">
-            <h3>Projekt "100% Ren Hårdträning"</h3>
-            <p>
-              <strong>Allt fler gym samarbetar med kommuner och polis</strong>
-              för att stoppa användning av anabola steroider och andra
-              dopingmedel.
-            </p>
-          </div>
-        </div>
-
-        <div class="statistics">
-          <div class="stat-box">
-            <span class="stat-number">700</span>
-            <span>Gym totalt i Sverige</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">100</span>
-            <span>Nya gym sedan 2020</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">40K+</span>
-            <span>Uppskattat antal som dopar sig</span>
-          </div>
-        </div>
-
-        <div class="key-points">
-          <h4>Viktiga insatser:</h4>
-          <ul>
-            <li>Personal får utbildning om dopning</li>
-            <li>Rutiner för att identifiera och stoppa missbruk</li>
-            <li>
-              Fokus på hälsosam träning istället för prestationshöjande medel
-            </li>
-            <li>Kommuner har nu ansvar för brottförebyggande arbete</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Slide 2: Gym mot dopning -->
-      <div class="slide content-slide">
-        <div class="slide-number">2/4</div>
-        <h2>💪 Sport: Gym arbetar mot dopning</h2>
-
-        <div class="news-item">
-          <div class="news-image">
-            <img
-              src="media/gym.webp"
-              width="200"
-              height="150"
-              alt="Modern gym interior with equipment"
-            />
-          </div>
-          <div class="news-content">
-            <h3>Projekt "100% Ren Hårdträning"</h3>
-            <p>
-              <strong>Allt fler gym samarbetar med kommuner och polis</strong>
-              för att stoppa användning av anabola steroider och andra
-              dopingmedel.
-            </p>
-          </div>
-        </div>
-
-        <div class="statistics">
-          <div class="stat-box">
-            <span class="stat-number">700</span>
-            <span>Gym totalt i Sverige</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">100</span>
-            <span>Nya gym sedan 2020</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">40K+</span>
-            <span>Uppskattat antal som dopar sig</span>
-          </div>
-        </div>
-
-        <div class="key-points">
-          <h4>Viktiga insatser:</h4>
-          <ul>
-            <li>Personal får utbildning om dopning</li>
-            <li>Rutiner för att identifiera och stoppa missbruk</li>
-            <li>
-              Fokus på hälsosam träning istället för prestationshöjande medel
-            </li>
-            <li>Kommuner har nu ansvar för brottförebyggande arbete</li>
           </ul>
         </div>
       </div>
