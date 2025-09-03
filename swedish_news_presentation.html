@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svenska Nyheter - Presentation</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+      }
+
+      .presentation-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .slide {
+        background: white;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+      }
+
+      .title-slide {
+        text-align: center;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+      }
+
+      .title-slide h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .title-slide .date {
+        font-size: 1.5em;
+        opacity: 0.9;
+      }
+
+      .content-slide h2 {
+        color: #2c3e50;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+      }
+
+      .news-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .news-image {
+        flex-shrink: 0;
+        margin-right: 10px;
+      }
+
+      .image-placeholder {
+        width: 200px;
+        height: 150px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .image-placeholder:hover {
+        transform: scale(1.05);
+      }
+
+      .health-placeholder {
+        background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+      }
+
+      .sports-placeholder {
+        background: linear-gradient(135deg, #4ecdc4, #44a08d);
+      }
+
+      .money-placeholder {
+        background: linear-gradient(135deg, #45b7d1, #2980b9);
+      }
+
+      .media-placeholder {
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+      }
+
+      .news-content h3 {
+        font-size: 1.8em;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      .news-content p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .key-points {
+        background: #f8f9fa;
+        border-left: 4px solid #3498db;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+
+      .key-points h4 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+
+      .key-points ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .key-points li {
+        padding: 8px 0;
+        border-bottom: 1px solid #e9ecef;
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .key-points li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #3498db;
+        font-weight: bold;
+      }
+
+      .statistics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .stat-box {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2.5em;
+        font-weight: bold;
+        display: block;
+      }
+
+      .slide-number {
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      @media (max-width: 768px) {
+        .presentation-container {
+          padding: 10px;
+        }
+
+        .slide {
+          padding: 20px;
+          min-height: auto;
+        }
+
+        .title-slide h1 {
+          font-size: 2.5em;
+        }
+
+        .content-slide h2 {
+          font-size: 2em;
+        }
+
+        .news-item {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      /* Print styles to ensure all slides show up */
+      @media print {
+        body {
+          background: white !important;
+        }
+
+        .presentation-container {
+          max-width: none;
+          padding: 0;
+        }
+
+        .slide {
+          page-break-after: always;
+          page-break-inside: avoid;
+          margin: 0;
+          margin-bottom: 0 !important;
+          min-height: 90vh;
+          height: auto;
+          box-shadow: none;
+          border: 1px solid #ddd;
+          display: block !important;
+          visibility: visible !important;
+        }
+
+        .slide:last-child {
+          page-break-after: auto;
+        }
+
+        .slide-number {
+          display: block !important;
+        }
+
+        .statistics {
+          page-break-inside: avoid;
+        }
+
+        .key-points {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="presentation-container">
+      <!-- Titel slide -->
+      <div class="slide title-slide">
+        <h1>🇸🇪 Svenska Nyheter</h1>
+        <p class="date">September 2025</p>
+        <p>Aktuella händelser från Sverige</p>
+      </div>
+
+      <!-- Slide 1: Högt blodtryck -->
+      <div class="slide content-slide">
+        <div class="slide-number">1/4</div>
+        <h2>🩺 Hälsa: Högt blodtryck är vanligt</h2>
+
+        <div class="news-item">
+          <div class="news-image">
+            <img
+              src="media/hbp.jpeg"
+              width="200"
+              height="150"
+              alt="Blood pressure measurement"
+            />
+          </div>
+          <div class="news-content">
+            <h3>Nästan 3 miljoner svenskar har högt blodtryck</h3>
+            <p>
+              <strong
+                >Högt blodtryck är den vanligaste orsaken till att människor dör
+                för tidigt i Sverige</strong
+              >
+              - men många vet inte att de har det.
+            </p>
+          </div>
+        </div>
+
+        <div class="statistics">
+          <div class="stat-box">
+            <span class="stat-number">3M</span>
+            <span>Svenskar med högt blodtryck</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">30K</span>
+            <span>Skulle kunna räddas årligen</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">50+</span>
+            <span>Ålder för kontroller</span>
+          </div>
+        </div>
+
+        <div class="key-points">
+          <h4>Viktiga fakta:</h4>
+          <ul>
+            <li>Kan leda till hjärtinfarkt, stroke och hjärtsvikt</li>
+            <li>Märks knappt innan det blir farligt</li>
+            <li>Nya råd: Kolla blodtryck på alla över 50 år</li>
+            <li>Förebyggande: Motion, hälsosam mat, mindre alkohol och salt</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 2: Gym mot dopning -->
+      <div class="slide content-slide">
+        <div class="slide-number">2/4</div>
+        <h2>💪 Sport: Gym arbetar mot dopning</h2>
+
+        <div class="news-item">
+          <div class="news-image">
+            <img
+              src="media/gym.webp"
+              width="200"
+              height="150"
+              alt="Modern gym interior with equipment"
+            />
+          </div>
+          <div class="news-content">
+            <h3>Projekt "100% Ren Hårdträning"</h3>
+            <p>
+              <strong>Allt fler gym samarbetar med kommuner och polis</strong>
+              för att stoppa användning av anabola steroider och andra
+              dopingmedel.
+            </p>
+          </div>
+        </div>
+
+        <div class="statistics">
+          <div class="stat-box">
+            <span class="stat-number">700</span>
+            <span>Gym totalt i Sverige</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">100</span>
+            <span>Nya gym sedan 2020</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">40K+</span>
+            <span>Uppskattat antal som dopar sig</span>
+          </div>
+        </div>
+
+        <div class="key-points">
+          <h4>Viktiga insatser:</h4>
+          <ul>
+            <li>Personal får utbildning om dopning</li>
+            <li>Rutiner för att identifiera och stoppa missbruk</li>
+            <li>
+              Fokus på hälsosam träning istället för prestationshöjande medel
+            </li>
+            <li>Kommuner har nu ansvar för brottförebyggande arbete</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 3: Höjd pant -->
+      <div class="slide content-slide">
+        <div class="slide-number">3/4</div>
+        <h2>♻️ Miljö: Mer pengar för burkar</h2>
+
+        <div class="news-item">
+          <div class="news-image">
+            <img
+              src="media/pant.webp"
+              width="200"
+              height="150"
+              alt="Recycling machine"
+            />
+          </div>
+          <div class="news-content">
+            <h3>Höjd pant från 1 september 2025</h3>
+            <p>
+              <strong
+                >Panten höjs för att Sverige ska nå återvinningsmålen</strong
+              >
+              och följa EU:s förpackningsförordning.
+            </p>
+          </div>
+        </div>
+
+        <div class="statistics">
+          <div class="stat-box">
+            <span class="stat-number">2kr</span>
+            <span>Burkar & små flaskor (förut 1kr)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">3kr</span>
+            <span>Stora flaskor (förut 2kr)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">90%</span>
+            <span>Nuvarande återvinningsgrad</span>
+          </div>
+        </div>
+
+        <div class="key-points">
+          <h4>Viktiga detaljer:</h4>
+          <ul>
+            <li>Gamla burkar ger fortfarande gamla panten fram till 2028</li>
+            <li>Målet är att nå ännu högre återvinningsgrad</li>
+            <li>Sverige är världsbäst på pantning</li>
+            <li>2,7 miljarder burkar och flaskor återvinns årligen</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 4: TV4 -->
+      <div class="slide content-slide">
+        <div class="slide-number">4/4</div>
+        <h2>📺 Media: TV4 slutar med marksändning</h2>
+
+        <div class="news-item">
+          <div class="news-image">
+            <img
+              src="media/tv4.webp"
+              width="200"
+              height="150"
+              alt="TV4 news anchors"
+            />
+          </div>
+          <div class="news-content">
+            <h3>TV4 flyttar till nätet</h3>
+            <p>
+              <strong
+                >TV4 meddelar att de kommer avsluta sin marksändning och
+                fokusera på digitala plattformen TV4 Play.</strong
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="key-points">
+          <h4>Förändringarna innebär:</h4>
+          <ul>
+            <li>Kanalen inte längre tillgänglig via vanlig antenn</li>
+            <li>Fokus på streaming via TV4 Play</li>
+            <li>Många program fortsätter vara gratis</li>
+            <li>Speglar en större trend där TV blir mer digitalt</li>
+            <li>Förändringen påverkar inte kabel-TV</li>
+            <li>SVT förblir den enda stora kanalen via marksändning</li>
+          </ul>
+        </div>
+
+        <div class="statistics">
+          <div class="stat-box">
+            <span class="stat-number">📱</span>
+            <span>Fokus på TV4 Play</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">📺</span>
+            <span>Från traditionell TV</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">🌐</span>
+            <span>Till digital plattform</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sammanfattning -->
+      <div class="slide title-slide">
+        <h1>Tack för uppmärksamheten!</h1>
+        <p>📊 Fyra viktiga nyheter från Sverige september 2025</p>
+        <p>🩺 Hälsa • 💪 Sport • ♻️ Miljö • 📺 Media</p>
+      </div>
+    </div>
+  </body>
+</html>
