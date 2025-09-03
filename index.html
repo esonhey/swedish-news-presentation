@@ -14,23 +14,31 @@
       }
 
       .presentation-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
       }
 
       .slide {
         background: white;
-        margin-bottom: 30px;
         border-radius: 15px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         padding: 40px;
-        min-height: 600px;
-        display: flex;
+        height: 100vh;
+        width: 100vw;
+        display: none;
         flex-direction: column;
         justify-content: center;
-        position: relative;
-        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        box-sizing: border-box;
+      }
+
+      .slide.active {
+        display: flex;
       }
 
       .slide::before {
@@ -192,14 +200,65 @@
         color: #666;
       }
 
-      @media (max-width: 768px) {
-        .presentation-container {
-          padding: 10px;
-        }
+      /* Navigation controls */
+      .nav-controls {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 1000;
+      }
 
+      .nav-btn {
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .nav-btn:hover {
+        background: white;
+        transform: translateY(-2px);
+      }
+
+      .nav-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .slide-indicator {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 1000;
+      }
+
+      .keyboard-hint {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 15px;
+        font-size: 12px;
+        z-index: 1000;
+      }
+
+      @media (max-width: 768px) {
         .slide {
           padding: 20px;
-          min-height: auto;
         }
 
         .title-slide h1 {
@@ -213,6 +272,14 @@
         .news-item {
           flex-direction: column;
           text-align: center;
+        }
+
+        .nav-controls {
+          bottom: 10px;
+        }
+
+        .keyboard-hint {
+          display: none;
         }
       }
 
@@ -260,8 +327,20 @@
   </head>
   <body>
     <div class="presentation-container">
+      <!-- Navigation controls -->
+      <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn">← Föregående</button>
+        <button class="nav-btn" id="nextBtn">Nästa →</button>
+      </div>
+      
+      <!-- Slide indicator -->
+      <div class="slide-indicator" id="slideIndicator">1 / 6</div>
+      
+      <!-- Keyboard hint -->
+      <div class="keyboard-hint">Använd ← → piltangenterna</div>
+
       <!-- Titel slide -->
-      <div class="slide title-slide">
+      <div class="slide title-slide active">
         <h1>🇸🇪 Svenska Nyheter</h1>
         <p class="date">September 2025</p>
         <p>Aktuella händelser från Sverige</p>
@@ -482,5 +561,61 @@
         <p>🩺 Hälsa • 💪 Sport • ♻️ Miljö • 📺 Media</p>
       </div>
     </div>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const slideIndicator = document.getElementById('slideIndicator');
+
+      function showSlide(n) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Show current slide
+        slides[n].classList.add('active');
+        
+        // Update indicator
+        slideIndicator.textContent = `${n + 1} / ${totalSlides}`;
+        
+        // Update button states
+        prevBtn.disabled = (n === 0);
+        nextBtn.disabled = (n === totalSlides - 1);
+      }
+
+      function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+          showSlide(currentSlide);
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          showSlide(currentSlide);
+        }
+      }
+
+      // Button event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Keyboard event listeners
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          nextSlide();
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          prevSlide();
+        }
+      });
+
+      // Initialize
+      showSlide(0);
+    </script>
   </body>
 </html>
