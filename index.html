@@ -845,7 +845,11 @@
 
         // Update URL hash
         if (updateHistory) {
-          window.history.pushState({ slide: n }, `Slide ${n + 1}`, `#slide-${n + 1}`);
+          window.history.pushState(
+            { slide: n },
+            `Slide ${n + 1}`,
+            `#slide-${n + 1}`
+          );
         }
       }
 
@@ -865,8 +869,8 @@
 
       function getSlideFromUrl() {
         const hash = window.location.hash;
-        if (hash.startsWith('#slide-')) {
-          const slideNum = parseInt(hash.replace('#slide-', '')) - 1;
+        if (hash.startsWith("#slide-")) {
+          const slideNum = parseInt(hash.replace("#slide-", "")) - 1;
           if (!isNaN(slideNum) && slideNum >= 0 && slideNum < totalSlides) {
             return slideNum;
           }
@@ -879,13 +883,13 @@
       prevBtn.addEventListener("click", prevSlide);
 
       // Handle browser back/forward buttons
-      window.addEventListener('popstate', function(event) {
+      window.addEventListener("popstate", function (event) {
         const slideNum = getSlideFromUrl();
         showSlide(slideNum, false);
       });
 
       // Handle hash changes (for direct URL access)
-      window.addEventListener('hashchange', function() {
+      window.addEventListener("hashchange", function () {
         const slideNum = getSlideFromUrl();
         showSlide(slideNum, false);
       });
