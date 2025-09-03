@@ -329,13 +329,13 @@
     <div class="presentation-container">
       <!-- Navigation controls -->
       <div class="nav-controls">
-        <button class="nav-btn" id="prevBtn">← Föregående</button>
-        <button class="nav-btn" id="nextBtn">Nästa →</button>
+        <button class="nav-btn" id="prevBtn">←</button>
+        <button class="nav-btn" id="nextBtn">→</button>
       </div>
-      
+
       <!-- Slide indicator -->
       <div class="slide-indicator" id="slideIndicator">1 / 6</div>
-      
+
       <!-- Keyboard hint -->
       <div class="keyboard-hint">Använd ← → piltangenterna</div>
 
@@ -564,25 +564,25 @@
 
     <script>
       let currentSlide = 0;
-      const slides = document.querySelectorAll('.slide');
+      const slides = document.querySelectorAll(".slide");
       const totalSlides = slides.length;
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const slideIndicator = document.getElementById('slideIndicator');
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const slideIndicator = document.getElementById("slideIndicator");
 
       function showSlide(n) {
         // Hide all slides
-        slides.forEach(slide => slide.classList.remove('active'));
-        
+        slides.forEach((slide) => slide.classList.remove("active"));
+
         // Show current slide
-        slides[n].classList.add('active');
-        
+        slides[n].classList.add("active");
+
         // Update indicator
         slideIndicator.textContent = `${n + 1} / ${totalSlides}`;
-        
+
         // Update button states
-        prevBtn.disabled = (n === 0);
-        nextBtn.disabled = (n === totalSlides - 1);
+        prevBtn.disabled = n === 0;
+        nextBtn.disabled = n === totalSlides - 1;
       }
 
       function nextSlide() {
@@ -600,15 +600,15 @@
       }
 
       // Button event listeners
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
 
       // Keyboard event listeners
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'ArrowRight') {
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
           event.preventDefault();
           nextSlide();
-        } else if (event.key === 'ArrowLeft') {
+        } else if (event.key === "ArrowLeft") {
           event.preventDefault();
           prevSlide();
         }
