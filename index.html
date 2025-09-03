@@ -29,12 +29,24 @@
         width: 100vw;
         display: none;
         flex-direction: column;
-        justify-content: center;
         position: absolute;
         top: 0;
         left: 0;
         overflow-y: auto;
         box-sizing: border-box;
+      }
+
+      .content-slide {
+        justify-content: flex-start;
+      }
+
+      .content-slide .slide-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
       }
 
       .slide.active {
@@ -346,7 +358,8 @@
       <div class="slide content-slide">
         <h2>🩺 Hälsa: Högt blodtryck är vanligt</h2>
 
-        <div class="news-item">
+        <div class="slide-content">
+          <div class="news-item">
           <div class="news-image">
             <img
               src="media/hbp.jpeg"
@@ -381,16 +394,18 @@
             <span>Ålder för kontroller</span>
           </div>
         </div>
+        </div>
       </div>
 
       <!-- Slide 1-b: Högt blodtryck -->
       <div class="slide content-slide">
         <h2>🩺 Hälsa: Högt blodtryck är vanligt</h2>
 
-        <div
-          class="news-image"
-          style="width: 100%; display: flex; justify-content: space-between"
-        >
+        <div class="slide-content">
+          <div
+            class="news-image"
+            style="width: 100%; display: flex; justify-content: space-between"
+          >
           <img
             src="media/heart-vector.jpg"
             width="200"
@@ -414,13 +429,15 @@
             </ul>
           </div>
         </div>
+        </div>
       </div>
 
       <!-- Slide 1-c: Högt blodtryck -->
       <div class="slide content-slide">
         <h2>🩺 Hälsa: Högt blodtryck är vanligt</h2>
 
-        <div class="key-points">
+        <div class="slide-content">
+          <div class="key-points">
           <h4>Nya råd och förebyggande åtgärder:</h4>
           <ul>
             <li>
@@ -433,6 +450,7 @@
             <li>Unga drabbas mer p.g.a. övervikt</li>
             <li>Rekommendation: alla borde mäta sitt blodtryck någon gång</li>
           </ul>
+          </div>
         </div>
       </div>
 
@@ -440,10 +458,11 @@
       <div class="slide content-slide">
         <h2>💪 Sport: Gym arbetar mot dopning</h2>
 
-        <div class="news-item">
-          <div class="news-image">
-            <img
-              src="media/Gym-structure-1080x675.png"
+        <div class="slide-content">
+          <div class="news-item">
+            <div class="news-image">
+              <img
+                src="media/Gym-structure-1080x675.png"
               width="200"
               height="150"
               alt="Modern gym interior with equipment"
@@ -479,16 +498,18 @@
             <li>Kommuner har nu ansvar för brottförebyggande arbete</li>
           </ul>
         </div> -->
+        </div>
       </div>
       <!-- Slide 2: Gym mot dopning -->
       <div class="slide content-slide">
         <h2>💪 Sport: Gym arbetar mot dopning</h2>
 
-        <div class="news-item">
-          <div
-            class="news-image"
-            style="display: flex; align-items: center; justify-content: center"
-          >
+        <div class="slide-content">
+          <div class="news-item">
+            <div
+              class="news-image"
+              style="display: flex; align-items: center; justify-content: center"
+            >
             <img
               src="media/doping.jpg"
               width="100%"
@@ -514,12 +535,14 @@
             </ul>
           </div>
         </div>
+        </div>
       </div>
       <!-- Slide 2: Gym mot dopning -->
       <div class="slide content-slide">
         <h2>💪 Sport: Gym arbetar mot dopning</h2>
 
-        <div class="news-item">
+        <div class="slide-content">
+          <div class="news-item">
           <div class="news-image">
             <img
               src="media/kraftig.jpg"
@@ -552,13 +575,15 @@
             </li>
           </ul>
         </div>
+        </div>
       </div>
 
       <!-- Slide 3-a: Höjd pant -->
       <div class="slide content-slide">
         <h2>♻️ Miljö: Mer pengar för burkar</h2>
 
-        <div class="news-item">
+        <div class="slide-content">
+          <div class="news-item">
           <div class="news-image">
             <img
               src="media/pant.webp"
@@ -591,6 +616,7 @@
             <span class="stat-number">90%</span>
             <span>Nuvarande återvinningsgrad</span>
           </div>
+        </div>
         </div>
       </div>
 
@@ -663,12 +689,14 @@
             <span>Till digital plattform</span>
           </div>
         </div>
+        </div>
       </div>
       <!-- Slide 4: TV4 -->
       <div class="slide content-slide">
         <h2>📺 Media: TV4 försvinner ur marknätet</h2>
 
-        <div class="news-item" style="display: flex; justify-content: center">
+        <div class="slide-content">
+          <div class="news-item" style="display: flex; justify-content: center">
           <div class="news-image">
             <img
               src="media/tv4.webp"
@@ -687,6 +715,7 @@
               Andra kanaler via kabel, satellit eller stadsnät påverkas inte
             </li>
           </ul>
+        </div>
         </div>
       </div>
 
