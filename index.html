@@ -193,7 +193,7 @@
         max-width: 800px;
         justify-content: center;
       }
-      
+
       .stat-box {
         flex: 1;
         min-width: 200px;
@@ -204,18 +204,18 @@
         border-radius: 10px;
         text-align: center;
       }
-      
+
       @media (max-width: 768px) {
         .statistics {
           gap: 15px;
         }
-        
+
         .stat-box {
           min-width: 150px;
           max-width: 200px;
         }
       }
-      
+
       @media (max-width: 480px) {
         .stat-box {
           flex: 1 1 100%;
@@ -370,7 +370,15 @@
       <div class="slide-indicator" id="slideIndicator">1 / 6</div>
 
       <!-- Titel slide -->
-      <div class="slide title-slide active" style="width: 100vw; height: 100vh; display: flex; justify-content: center;">
+      <div
+        class="slide title-slide active"
+        style="
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+        "
+      >
         <h1>🇸🇪 Svenska Nyheter</h1>
         <p class="date">September 2025</p>
         <p>
@@ -384,40 +392,40 @@
 
         <div class="slide-content">
           <div class="news-item">
-          <div class="news-image">
-            <img
-              src="media/hbp.jpeg"
-              width="200"
-              height="150"
-              alt="Blood pressure measurement"
-            />
+            <div class="news-image">
+              <img
+                src="media/hbp.jpeg"
+                width="200"
+                height="150"
+                alt="Blood pressure measurement"
+              />
+            </div>
+            <div class="news-content">
+              <h3>Nästan 3 miljoner svenskar har högt blodtryck</h3>
+              <p>
+                <strong
+                  >Högt blodtryck är den vanligaste orsaken till att människor
+                  dör för tidigt i Sverige</strong
+                >
+                - men många vet inte att de har det.
+              </p>
+            </div>
           </div>
-          <div class="news-content">
-            <h3>Nästan 3 miljoner svenskar har högt blodtryck</h3>
-            <p>
-              <strong
-                >Högt blodtryck är den vanligaste orsaken till att människor dör
-                för tidigt i Sverige</strong
-              >
-              - men många vet inte att de har det.
-            </p>
-          </div>
-        </div>
 
-        <div class="statistics">
-          <div class="stat-box">
-            <span class="stat-number">3M</span>
-            <span>Svenskar med högt blodtryck</span>
+          <div class="statistics">
+            <div class="stat-box">
+              <span class="stat-number">3M</span>
+              <span>Svenskar med högt blodtryck</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">30K</span>
+              <span>Skulle kunna räddas årligen</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">50+</span>
+              <span>Ålder för kontroller</span>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">30K</span>
-            <span>Skulle kunna räddas årligen</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">50+</span>
-            <span>Ålder för kontroller</span>
-          </div>
-        </div>
         </div>
       </div>
 
@@ -430,27 +438,27 @@
             class="news-image"
             style="width: 100%; display: flex; justify-content: space-between"
           >
-          <img
-            src="media/heart-vector.jpg"
-            width="200"
-            height="150"
-            alt="Heart vector"
-          />
-          <img
-            src="media/hbp2.jpg"
-            width="200"
-            height="150"
-            alt="Blood pressure"
-          />
-        </div>
-          <div class="key-points" style="width: 90%;" >
+            <img
+              src="media/heart-vector.jpg"
+              width="200"
+              height="150"
+              alt="Heart vector"
+            />
+            <img
+              src="media/hbp2.jpg"
+              width="200"
+              height="150"
+              alt="Blood pressure"
+            />
+          </div>
+          <div class="key-points" style="width: 90%">
             <h4>Kan leda till:</h4>
             <ul>
               <li>Hjärtinfarkt</li>
               <li>Stroke</li>
               <li>Hjärtsvikt</li>
             </ul>
-        </div>
+          </div>
         </div>
       </div>
 
@@ -459,19 +467,19 @@
         <h2>🩺 Hälsa: Högt blodtryck är vanligt</h2>
 
         <div class="slide-content">
-          <div class="key-points" style="width: 90%;" >
-          <h4>Nya råd och förebyggande åtgärder:</h4>
-          <ul>
-            <li>
-              Nya riktlinjer i vården
-              <ul>
-                <li>Blodtryck ska mätas på alla över 50 år</li>
-              </ul>
-            </li>
-            <li>I USA: alla över 18 år rekommenderas mäta</li>
-            <li>Unga drabbas mer p.g.a. övervikt</li>
-            <li>Rekommendation: alla borde mäta sitt blodtryck någon gång</li>
-          </ul>
+          <div class="key-points" style="width: 90%">
+            <h4>Nya råd och förebyggande åtgärder:</h4>
+            <ul>
+              <li>
+                Nya riktlinjer i vården
+                <ul>
+                  <li>Blodtryck ska mätas på alla över 50 år</li>
+                </ul>
+              </li>
+              <li>I USA: alla över 18 år rekommenderas mäta</li>
+              <li>Unga drabbas mer p.g.a. övervikt</li>
+              <li>Rekommendation: alla borde mäta sitt blodtryck någon gång</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -485,31 +493,31 @@
             <div class="news-image">
               <img
                 src="media/Gym-structure-1080x675.png"
-              width="200"
-              height="150"
-              alt="Modern gym interior with equipment"
-            />
+                width="200"
+                height="150"
+                alt="Modern gym interior with equipment"
+              />
+            </div>
+            <div class="news-content" style="margin-top: -20px">
+              <h3>
+                Allt fler gym arbetar för att stoppa dopning genom ett projekt
+                som heter ”100% ren hårdträning”
+              </h3>
+            </div>
           </div>
-          <div class="news-content" style="margin-top: -20px">
-            <h3>
-              Allt fler gym arbetar för att stoppa dopning genom ett projekt som
-              heter ”100% ren hårdträning”
-            </h3>
-          </div>
-        </div>
 
-        <div class="statistics">
-          <div class="stat-box">
-            <span class="stat-number">700</span>
-            <span>Gym totalt i Sverige</span>
+          <div class="statistics">
+            <div class="stat-box">
+              <span class="stat-number">700</span>
+              <span>Gym totalt i Sverige</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">100</span>
+              <span>Nya gym sedan 2020</span>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">100</span>
-            <span>Nya gym sedan 2020</span>
-          </div>
-        </div>
 
-        <!-- <div class="key-points">
+          <!-- <div class="key-points">
           <h4>Viktiga insatser:</h4>
           <ul>
             <li>Personal får utbildning om dopning</li>
@@ -530,33 +538,37 @@
           <div class="news-item">
             <div
               class="news-image"
-              style="display: flex; align-items: center; justify-content: center"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
             >
-            <img
-              src="media/doping.jpg"
-              width="100%"
-              height="300"
-              alt="Modern gym interior with equipment"
-            />
+              <img
+                src="media/doping.jpg"
+                width="100%"
+                height="300"
+                alt="Modern gym interior with equipment"
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="news-item">
-          <div class="key-points">
-            <ul>
-              <li>
-                Dopning är att man tar droger som gör att man presterar
-                bättre.dopning är förbjudet men det händer ändå att vissa
-                idrottare dopar sig för att ha större chans att vinna en
-                tävling.​
-              </li>
-              <li>
-                En vanlig drog som används vid dopning är anabola steroider.​
-              </li>
-              <li>Den gör att musklerna växer snabbare. ​</li>
-            </ul>
+          <div class="news-item">
+            <div class="key-points">
+              <ul>
+                <li>
+                  Dopning är att man tar droger som gör att man presterar
+                  bättre.dopning är förbjudet men det händer ändå att vissa
+                  idrottare dopar sig för att ha större chans att vinna en
+                  tävling.​
+                </li>
+                <li>
+                  En vanlig drog som används vid dopning är anabola steroider.​
+                </li>
+                <li>Den gör att musklerna växer snabbare. ​</li>
+              </ul>
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <!-- Slide 2: Gym mot dopning -->
@@ -565,38 +577,38 @@
 
         <div class="slide-content">
           <div class="news-item">
-          <div class="news-image">
-            <img
-              src="media/kraftig.jpg"
-              width="400"
-              height="300"
-              alt="Modern gym interior with equipment"
-            />
+            <div class="news-image">
+              <img
+                src="media/kraftig.jpg"
+                width="400"
+                height="300"
+                alt="Modern gym interior with equipment"
+              />
+            </div>
+            <div class="news-content">
+              <h3>Anabola är inte bra för hälsan​</h3>
+              <p>
+                <strong>
+                  Man kan till exempel bli arg, våldsam, och få skador på hjärta
+                  …​
+                </strong>
+              </p>
+            </div>
           </div>
-          <div class="news-content">
-            <h3>Anabola är inte bra för hälsan​</h3>
-            <p>
-              <strong>
-                Man kan till exempel bli arg, våldsam, och få skador på hjärta
-                …​
-              </strong>
-            </p>
-          </div>
-        </div>
 
-        <div class="key-points">
-          <ul>
-            <li>
-              Alla idrottare måste testa sig för att visa att de inte använder
-              förbjudna ämnen.​
-            </li>
-            <li>
-              Det är därför som projektet 100% hård träning har startats. Nu
-              samarbetar många gym med kommuner och polisen för att stoppa
-              dopning.​
-            </li>
-          </ul>
-        </div>
+          <div class="key-points">
+            <ul>
+              <li>
+                Alla idrottare måste testa sig för att visa att de inte använder
+                förbjudna ämnen.​
+              </li>
+              <li>
+                Det är därför som projektet 100% hård träning har startats. Nu
+                samarbetar många gym med kommuner och polisen för att stoppa
+                dopning.​
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -606,39 +618,39 @@
 
         <div class="slide-content">
           <div class="news-item">
-          <div class="news-image">
-            <img
-              src="media/pant.webp"
-              width="200"
-              height="150"
-              alt="Recycling machine"
-            />
+            <div class="news-image">
+              <img
+                src="media/pant.webp"
+                width="200"
+                height="150"
+                alt="Recycling machine"
+              />
+            </div>
+            <div class="news-content" style="margin-top: -35px">
+              <h3>Höjd pant från 1 september 2025</h3>
+              <p>
+                <strong
+                  >Panten höjs för att Sverige ska nå återvinningsmålen</strong
+                >
+                och följa EU:s förpackningsförordning.
+              </p>
+            </div>
           </div>
-          <div class="news-content" style="margin-top: -35px">
-            <h3>Höjd pant från 1 september 2025</h3>
-            <p>
-              <strong
-                >Panten höjs för att Sverige ska nå återvinningsmålen</strong
-              >
-              och följa EU:s förpackningsförordning.
-            </p>
-          </div>
-        </div>
 
-        <div class="statistics">
-          <div class="stat-box">
-            <span class="stat-number">2kr</span>
-            <span>Burkar & små flaskor (förut 1kr)</span>
+          <div class="statistics">
+            <div class="stat-box">
+              <span class="stat-number">2kr</span>
+              <span>Burkar & små flaskor (förut 1kr)</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">3kr</span>
+              <span>Stora flaskor (förut 2kr)</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">90%</span>
+              <span>Nuvarande återvinningsgrad</span>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">3kr</span>
-            <span>Stora flaskor (förut 2kr)</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">90%</span>
-            <span>Nuvarande återvinningsgrad</span>
-          </div>
-        </div>
         </div>
       </div>
 
@@ -711,14 +723,14 @@
             <span>Till digital plattform</span>
           </div>
         </div>
-        </div>
       </div>
-      <!-- Slide 4: TV4 -->
-      <div class="slide content-slide">
-        <h2>📺 Media: TV4 försvinner ur marknätet</h2>
+    </div>
+    <!-- Slide 4: TV4 -->
+    <div class="slide content-slide">
+      <h2>📺 Media: TV4 försvinner ur marknätet</h2>
 
-        <div class="slide-content">
-          <div class="news-item" style="display: flex; justify-content: center">
+      <div class="slide-content">
+        <div class="news-item" style="display: flex; justify-content: center">
           <div class="news-image">
             <img
               src="media/tv4.webp"
@@ -729,9 +741,7 @@
           </div>
         </div>
 
-        <div class="key-points"
-        style="width: 90%;"
-        >
+        <div class="key-points" style="width: 90%">
           <ul>
             <li>Se TV4 gratis via TV4 Play (många program & nyheter)</li>
             <li>Abonnemang behövs för att se kanalen live</li>
@@ -740,11 +750,19 @@
             </li>
           </ul>
         </div>
-        </div>
       </div>
+    </div>
 
-      <!-- Sammanfattning -->
-      <div class="slide title-slide" style="display: flex; justify-content: center;" >
+    <!-- Sammanfattning -->
+    <div class="slide title-slide">
+      <div
+        style="
+          display: flex;
+          height: 100%;
+          flex-direction: column;
+          justify-content: center;
+        "
+      >
         <h1>Tack för uppmärksamheten!</h1>
         <p>📊 Fyra viktiga nyheter från Sverige september 2025</p>
         <p>🩺 Hälsa • 💪 Sport • ♻️ Miljö • 📺 Media</p>
