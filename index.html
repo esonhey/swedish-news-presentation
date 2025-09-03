@@ -311,46 +311,106 @@
         }
       }
 
-      /* Print styles to ensure all slides show up */
+      /* Enhanced print styles for PDF generation */
       @media print {
+        * {
+          -webkit-print-color-adjust: exact !important;
+          color-adjust: exact !important;
+        }
+
         body {
           background: white !important;
+          margin: 0;
+          padding: 0;
         }
 
         .presentation-container {
           max-width: none;
           padding: 0;
+          width: 100%;
+          height: auto;
         }
 
         .slide {
           page-break-after: always;
           page-break-inside: avoid;
           margin: 0;
-          margin-bottom: 0 !important;
+          padding: 40px;
           min-height: 90vh;
           height: auto;
+          width: 100%;
           box-shadow: none;
-          border: 1px solid #ddd;
-          display: block !important;
+          border: none;
+          display: flex !important;
+          flex-direction: column;
+          justify-content: flex-start;
           visibility: visible !important;
+          position: relative;
+          background: white;
+        }
+
+        .content-slide {
+          justify-content: flex-start !important;
+        }
+
+        .slide-content {
+          display: flex !important;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex: 1;
+          margin-top: 20px;
         }
 
         .slide:last-child {
           page-break-after: auto;
         }
 
-        .slide-number {
-          display: block !important;
+        .title-slide {
+          justify-content: center !important;
+          align-items: center !important;
+          text-align: center;
         }
 
         .statistics {
           page-break-inside: avoid;
+          display: flex !important;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .stat-box {
+          background: linear-gradient(135deg, #667eea, #764ba2) !important;
+          color: white !important;
+          min-width: 150px;
+          flex: 0 0 auto;
         }
 
         .key-points {
           page-break-inside: avoid;
           width: 90% !important;
         }
+
+        .news-item {
+          page-break-inside: avoid;
+        }
+
+        /* Hide navigation elements in print */
+        .nav-controls,
+        .slide-indicator,
+        .keyboard-hint {
+          display: none !important;
+        }
+
+        h1, h2, h3, h4 {
+          color: black !important;
+        }
+
+        .title-slide h1 {
+          color: white !important;
+        }
+
         .flex {
           display: flex;
         }
